@@ -25,11 +25,11 @@ def main(args):
     negativeImagePath = (args.negativeImages)
     
     if (args.train == 0):
-        positiveTrainImagePath = './trainDataPositive'
-        negativeTrainImagePath = './trainDataNegative'
+        positiveTrainImagePath = './output/trainDataPositive'
+        negativeTrainImagePath = './output/trainDataNegative'
     else:
-        positiveTrainImagePath = './testDataPositive'
-        negativeTrainImagePath = './testDataNegative'
+        positiveTrainImagePath = './output/testDataPositive'
+        negativeTrainImagePath = './output/testDataNegative'
         
     createTrainingData(positiveImagePath, negativeImagePath)
 

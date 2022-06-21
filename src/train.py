@@ -239,8 +239,8 @@ def trainCNNModel(X_LL_train,X_LH_train,X_HL_train,X_HH_train,y_train,
     Y_train = np_utils.to_categorical(y_train, num_classes) # One-hot encode the labels
     Y_test = np_utils.to_categorical(y_test, num_classes) # One-hot encode the labels
 
-    checkPointFolder = 'checkPoint'
-    checkpoint_name = checkPointFolder + '/Weights-{epoch:03d}--{val_loss:.5f}.hdf5' 
+    checkPointFolder = './output/model'
+    checkpoint_name = checkPointFolder + '/Checkpoint-Weights-{epoch:03d}--{val_loss:.5f}.hdf5' 
     checkpoint = ModelCheckpoint(checkpoint_name, monitor='val_loss', verbose = 1, save_best_only = True, mode ='auto')
     callbacks_list = [checkpoint]
     
@@ -259,7 +259,7 @@ def trainCNNModel(X_LL_train,X_LH_train,X_HL_train,X_HH_train,y_train,
               verbose=1, validation_split=0.1, callbacks=callbacks_list) # ...holding out 10% of the data for validation
     score, acc = model.evaluate([X_LL_test,X_LH_test,X_HL_test,X_HH_test], Y_test, verbose=1)  # Evaluate the trained model on the test set!
 
-    model.save('moirePattern3CNN_.h5')
+    model.save('./output/model/moirePattern3CNN.h5')
     
     return model
 

@@ -18,15 +18,15 @@ height = 375#512 #change dimensions according to the input image in the training
 depth = 1
 num_classes = 2
 
-positiveTestImagePath = './testDataPositive'
-negativeTestImagePath = './testDataNegative'
+positiveTestImagePath = './output/testDataPositive'
+negativeTestImagePath = './output/testDataNegative'
     
 def main(args):
     weights_file = (args.weightsFile)
     positiveImagePath = (args.positiveTestImages)
     negativeImagePath = (args.negativeTestImages)
     
-    os.system("python createTrainingData.py {} {} {}".format(positiveImagePath, negativeImagePath, 1))
+    os.system("python src/createTrainingData.py {} {} {}".format(positiveImagePath, negativeImagePath, 1))
     X_LL, X_LH, X_HL, X_HH, X_index, Y, imageCount = readWaveletData(positiveImagePath, negativeImagePath, positiveTestImagePath, negativeTestImagePath)
     
     X_LL = np.array(X_LL)
