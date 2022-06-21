@@ -1,18 +1,16 @@
 import sys
 import argparse
-from PIL import Image
-from PIL import ImageOps
-import random
-import sys
 import os
-
 from os import listdir
 from os.path import isfile, join
+
 from PIL import Image
+
 from haar2D import fwdHaarDWT2D
 
-#The training images need to be put in two folders. positiveImages and negativeImages. positiveImages are the images which are captured from the display devices and has the presence of stron or weak Moiré patterms in it. negativeImages are the ones without Moiré Patterns (i.e. the images which are not captured from the display devices)
 
+
+#The training images need to be put in two folders. positiveImages and negativeImages. positiveImages are the images which are captured from the display devices and has the presence of stron or weak Moiré patterms in it. negativeImages are the ones without Moiré Patterns (i.e. the images which are not captured from the display devices)
 
 #folders to store training data
 positiveTrainImagePath = ''

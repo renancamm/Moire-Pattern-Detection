@@ -3,8 +3,6 @@
 
 #One significant observation found while analyzing the images is, when the image intensities are relatively darker, the patterns aren’t visible much. The darker regions in the image produce less Moire ́ patterns compared to the brighter regions in the image. To summarize the spread of the Moire ́ pattern in the image, spatially, and to produce this effect while training the network, we used the LL band of the image (which is the downsampled original image consisting of low frequency information) and used it as weights for LH anf HL band during the training, by directly multiplying it to the convolved and combined response of the LH and HL bands
 
-import os
-
 from keras.models import Model # basic class for specifying and training a neural network
 from keras.layers import Input, Convolution2D, MaxPooling2D, Dense, Dropout, Activation, Flatten, Add, Multiply, Maximum
 

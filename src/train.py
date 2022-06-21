@@ -1,16 +1,15 @@
 #To detect Moire ́ patternzs, images are first decomposed using Wavelet decomposition (refer to file '') and trained using multi-input Convolutional neural network. The strength of the proposed CNN model is, it uses the LL intensity image (from the Wavelet decomposition) as a weight parameter for the Moire ́ pattern, thereby approximating the spatial spread of the Moire ́ pattern in the image. Usage of CNN model performs better than frequency thresholding approach as the model is trained considering diverse scenarios and it is able to distinguish between the high frequency of background texture and the Moire ́ pattern.
 
-from matplotlib import pyplot as plt
-import numpy as np
 import sys
 import argparse
+import os
 from os import listdir
 from os.path import isfile, join
+
+import numpy as np
 from PIL import Image
 from sklearn import preprocessing
-from skimage import io
 from sklearn.model_selection import train_test_split
-import os
 from mCNN import createModel
 from keras.utils import np_utils # utilities for one-hot encoding of ground truth values
 from keras.callbacks import ModelCheckpoint

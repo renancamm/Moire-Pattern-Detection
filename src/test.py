@@ -1,19 +1,16 @@
 #Use this file for evaluating on a dataset that is not used for training
 
-from matplotlib import pyplot as plt
-import numpy as np
 import sys
 import argparse
+import os
 from os import listdir
 from os.path import isfile, join
-from PIL import Image
-from sklearn import preprocessing
-from skimage import io
-from sklearn.model_selection import train_test_split
-import os
+
+import numpy as np
 from mCNN import createModel
-import createTrainingData
 from train import readWaveletData, evaluate
+
+
 
 #constants
 width = 500#384 #change dimensions according to the input image in the training

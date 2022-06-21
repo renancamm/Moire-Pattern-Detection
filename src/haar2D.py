@@ -1,8 +1,8 @@
-
 #This function(fwdHaarDWT2D) computes the 2D Wavelet Transform in the image. All the input images are passed through a Haar Wavelet Decomposition module, to get the LL, LH, HL and HHH component of the image
 
 import numpy as np
-import pywt
+
+
 
 def splitFreqBands(img, levRows, levCols):
     halfRow = int(levRows/2)
