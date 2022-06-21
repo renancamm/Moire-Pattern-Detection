@@ -74,10 +74,10 @@ def augmentAndTrasformImage(f, mainFolder, trainFolder):
         print('training image rotated')
     transformImageAndSave(imgGray, f, '', trainFolder)
 
-    imgGray = imgGray.transpose(Image.ROTATE_180)
+    imgGray = imgGray.transpose(Image.Transpose.ROTATE_180)
     transformImageAndSave(imgGray, f, '180_', trainFolder)
 
-    imgGray = imgGray.transpose(Image.FLIP_LEFT_RIGHT)
+    imgGray = imgGray.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
     transformImageAndSave(imgGray, f, '180_FLIP_', trainFolder)
     
     return True
